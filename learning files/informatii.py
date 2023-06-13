@@ -1,13 +1,19 @@
 '''
 variabile- valori tinute in zona de memorie
+type casting
+concatenare
+type()
+input()
 
-tipuri de date: string, char, integer, boolean, double/float
+assert
+
+tipuri de date: string, integer, boolean, float
 
 operatori:
-    aritmetici
-    logici
-    de atribuire
-    de comparare
+    aritmetici + - / % * =
+    logici and or not
+    de atribuire = += -= *= /=  **=
+    de comparare == != <= >= < >
 
 structuri de date:
     array, liste, maps/dict
@@ -25,7 +31,9 @@ Coada- structura de tip FIFO
 Stiva- LIFO
 
 flow control
-    if else
+    if conditie:
+    elif conditie:
+    else:
     switch
 loop
     while
@@ -41,5 +49,22 @@ functie=logica delimitata, care poate fi refolosita
  oop-object oriented programming
  variabile=> atribute, proprietati, fields
   functii=> metode
+
+'''
+# string slicing
+# [poz_start:poz_end:step]
+# metode sau functii definite intr-o clasa
+# apelare: string.metoda
+'''
+exemple de functii:
+    replace(car_de_inlocuit, car_cu_care_se_inloc, cate_car_sa_inlocuiasca)
+    upper
+    lower
+    split(delimitator)
+    index(car_cautat)
+    isLower
+    capitalize- schimba prima litera din string in masjuscula
+    isDecimal isDigit isNumeric
+    count
 
 '''
