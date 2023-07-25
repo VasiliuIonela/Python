@@ -1,0 +1,58 @@
+<input type="text" class="form-control" id="job-title" placeholder="Enter your job title">
+#creati un selector xpath absolut pentru elementul job title
+/html/body/div/form/div/div[3]/input
+
+# tema: creati un path absolut pt checkbox 3
+
+<input type="checkbox" id="checkbox-3" aria-label="checkbox" value="checkbox-3">
+/html/body/div/form/div/div/div/div/div/input
+
+#selectori xpath relativi:
+#1. vom crea un xpath relativ care sa ne duca la primul input din formular
+//input
+
+#2. vom crea un xpath relativ care sa ne duca la primul input de tip text
+
+//input[@type='text']
+#3. vom crea u xpath relativ care sa ne duca la al 3 a input de tip text
+<input type="text" class="form-control" id="job-title" placeholder="Enter your job title">
+//input[@type='text' and @id='job-title']
+
+#4. vom crea un xpath relativ pentru primul element cu id-checkbox-1, indiferent de tag-urile in care se afla
+//*[@id='checkbox-1']
+
+5. vom naviga folosind un xpath relativ din parinte in copil, vom incepe intr-un div si vom identifica un element cu tag-ul label
+//div/strong/label
+6. vom construi un xpath relativ cu navigare din copil in parinte, copil are id='first-name' si tagname input
+
+//input[@id='first-name']
+
+//input[@id='first-name']//parent::div
+
+tema: folosind xpath anterior creati un nou xpath, si printati textul label-ului din parintele div
+//input[@id='first-name']//parent::div/strong/label
+
+7. vom construi un xpath relativ cu navigare dintr-un tag name spre un frate anterior
+//input[@id='first-name']//preceding-sibling::strong
+
+8. vom construi un xpath relativ cu navigare dintr-un tag name spre fratele lui ulterior
+//div[@class='input-group']//following-sibling::div
+
+9. construim un selector css cu navigare din parinte in copil pt a verifica existenta unui camp cu tag label si sa confirmam faptul ca acesta este egal cu first-name
+strong > label
+
+<input type="radio" id="radio-button-2" aria-label="Radio button" value="radio-button-2">
+//input[@id="radio-button-2"]
+
+tema:
+explicati ce elemente identifica cei doi selectori xpath si care este diferenta dintre ei; cate rezultate returneaza fiecare?
+//form/div/div/input
+        - returneaza 4 rezultate
+        - se navigheaza, folosind un xpath relativ, din parinte in copil. se incepe din form si se identifica elementele  cu tag input
+
+
+//form//input
+        - returneaza 10 rezultate
+
+CSS selector
+

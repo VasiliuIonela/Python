@@ -114,109 +114,108 @@ your function should be universal).'''
 
 #write a simple program which pretends to play tic-tac-toe with the user.
 
-import random
-
-# Function to print the Tic-Tac-Toe board
-def print_board(board):
-    for row in board:
-        print("|".join(row))
-        print("-" * 5)
-
-# Function to check if any player has won
-def check_winner(board, player):
-    # Check rows
-    for row in board:
-        if row.count(player) == 3:
-            return True
-
-    # Check columns
-    for col in range(3):
-        if board[0][col] == player and board[1][col] == player and board[2][col] == player:
-            return True
-
-    # Check diagonals
-    if board[0][0] == player and board[1][1] == player and board[2][2] == player:
-        return True
-    if board[0][2] == player and board[1][1] == player and board[2][0] == player:
-        return True
-
-    return False
-
-# Function to make the computer's move
-def make_computer_move(board, computer, player):
-    # Check if computer can win in the next move
-    for row in range(3):
-        for col in range(3):
-            if board[row][col] == "":
-                board[row][col] = computer
-                if check_winner(board, computer):
-                    return
-
-                # Reset the move
-                board[row][col] = ""
-
-    # Check if player can win in the next move
-    for row in range(3):
-        for col in range(3):
-            if board[row][col] == "":
-                board[row][col] = player
-                if check_winner(board, player):
-                    board[row][col] = computer
-                    return
-
-                # Reset the move
-                board[row][col] = ""
-
-    # If no winning move is possible, make a random move
-    while True:
-        row = random.randint(0, 2)
-        col = random.randint(0, 2)
-        if board[row][col] == "":
-            board[row][col] = computer
-            return
-
-# Function to play the game
-def play_game():
-    board = [["", "", ""], ["", "", ""], ["", "", ""]]
-    player = "X"
-    computer = "O"
-
-    print("Welcome to Tic-Tac-Toe!")
-    print_board(board)
-
-    while True:
-        if player == "X":
-            print("Your turn (X)")
-            while True:
-                row = int(input("Enter the row (0-2): "))
-                col = int(input("Enter the column (0-2): "))
-                if board[row][col] == "":
-                    break
-                else:
-                    print("That position is already occupied. Try again.")
-            board[row][col] = player
-        else:
-            print("Computer's turn (O)")
-            make_computer_move(board, computer, player)
-
-        print_board(board)
-
-        if check_winner(board, player):
-            print("Congratulations! You won!")
-            break
-        elif check_winner(board, computer):
-            print("Sorry! You lost!")
-            break
-        elif all(board[i][j] != "" for i in range(3) for j in range(3)):
-            print("It's a tie!")
-            break
-
-        player = "O" if player == "X" else "X"
-
-    print("Game Over")
-
-# Start the game
-play_game()
-
+# import random
+#
+# # Function to print the Tic-Tac-Toe board
+# def print_board(board):
+#     for row in board:
+#         print("|".join(row))
+#         print("-" * 5)
+#
+# # Function to check if any player has won
+# def check_winner(board, player):
+#     # Check rows
+#     for row in board:
+#         if row.count(player) == 3:
+#             return True
+#
+#     # Check columns
+#     for col in range(3):
+#         if board[0][col] == player and board[1][col] == player and board[2][col] == player:
+#             return True
+#
+#     # Check diagonals
+#     if board[0][0] == player and board[1][1] == player and board[2][2] == player:
+#         return True
+#     if board[0][2] == player and board[1][1] == player and board[2][0] == player:
+#         return True
+#
+#     return False
+#
+# # Function to make the computer's move
+# def make_computer_move(board, computer, player):
+#     # Check if computer can win in the next move
+#     for row in range(3):
+#         for col in range(3):
+#             if board[row][col] == "":
+#                 board[row][col] = computer
+#                 if check_winner(board, computer):
+#                     return
+#
+#                 # Reset the move
+#                 board[row][col] = ""
+#
+#     # Check if player can win in the next move
+#     for row in range(3):
+#         for col in range(3):
+#             if board[row][col] == "":
+#                 board[row][col] = player
+#                 if check_winner(board, player):
+#                     board[row][col] = computer
+#                     return
+#
+#                 # Reset the move
+#                 board[row][col] = ""
+#
+#     # If no winning move is possible, make a random move
+#     while True:
+#         row = random.randint(0, 2)
+#         col = random.randint(0, 2)
+#         if board[row][col] == "":
+#             board[row][col] = computer
+#             return
+#
+# # Function to play the game
+# def play_game():
+#     board = [["", "", ""], ["", "", ""], ["", "", ""]]
+#     player = "X"
+#     computer = "O"
+#
+#     print("Welcome to Tic-Tac-Toe!")
+#     print_board(board)
+#
+#     while True:
+#         if player == "X":
+#             print("Your turn (X)")
+#             while True:
+#                 row = int(input("Enter the row (0-2): "))
+#                 col = int(input("Enter the column (0-2): "))
+#                 if board[row][col] == "":
+#                     break
+#                 else:
+#                     print("That position is already occupied. Try again.")
+#             board[row][col] = player
+#         else:
+#             print("Computer's turn (O)")
+#             make_computer_move(board, computer, player)
+#
+#         print_board(board)
+#
+#         if check_winner(board, player):
+#             print("Congratulations! You won!")
+#             break
+#         elif check_winner(board, computer):
+#             print("Sorry! You lost!")
+#             break
+#         elif all(board[i][j] != "" for i in range(3) for j in range(3)):
+#             print("It's a tie!")
+#             break
+#
+#         player = "O" if player == "X" else "X"
+#
+#     print("Game Over")
+#
+# # Start the game
+# play_game()
 
 
