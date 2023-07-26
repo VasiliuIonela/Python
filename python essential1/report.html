@@ -1,0 +1,8 @@
+Feature: Test the sort functionality in Mobile List page for http://live.techpanda.org/index.php/ # features/sort.feature:1
+
+  Scenario: Verify item in Mobile List page can be sorted by 'Name'  # features/sort.feature:2
+    When I go to http://live.techpanda.org/index.php/                # steps/sort_steps.py:4
+    And I click on 'MOBILE' page                                     # steps/sort_steps.py:9
+    And I select 'SORT BY' dropdown as 'name'                        # steps/sort_steps.py:14
+    Then I should see a sorted mobile list by name                   # steps/sort_steps.py:19
+
