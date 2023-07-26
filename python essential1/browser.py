@@ -1,6 +1,6 @@
 from selenium import webdriver
 class Browser:
-    browser = webdriver.Firefox()
+    browser = webdriver.Chrome()
     browser.maximize_window()
     def close(self):
         self.browser.quit()

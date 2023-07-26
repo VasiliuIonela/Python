@@ -1,9 +1,10 @@
 from browser import Browser
-from pages.sort import TestSortByName
+from pages.login_page import TestLogin
+
 
 def before_all(context):
     context.browser = Browser()
-    context.sort = TestSortByName()
+    context.login_page = TestLogin()
 
 
 def after_all(context):
