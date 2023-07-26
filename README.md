@@ -10,7 +10,9 @@ Learning Python
 * [py file](https://github.com/VasiliuIonela/Python/blob/main/oop2/angajati.py).
 * [main py file](https://github.com/VasiliuIonela/Python/blob/main/oop2/angajati_main.py)
 
-### Test the sort functionality for http://live.techpanda.org/index.php/
+##Test for  http://live.techpanda.org/index.php/ using Selenium and behave with Python
+
+### Test the sort functionality
 * [feature file](https://github.com/VasiliuIonela/Python/blob/main/python%20essential1/sort.feature)
 * [sort_tests](https://github.com/VasiliuIonela/Python/blob/main/python%20essential1/sort.py)
 * [steps](https://github.com/VasiliuIonela/Python/blob/main/python%20essential1/sort_steps.py)
